@@ -9,9 +9,9 @@ public class MainController {
 	
 	@GetMapping("/")
 	
-	public String welcome(Model model) {
+	public String welcome(Model modelo) {
 		
-		model.addAttribute("nombre", "Proyecto.Prestamos");
+		modelo.addAttribute("nombre", "Proyecto.Prestamos");
 		return "index";
 	}
 	
