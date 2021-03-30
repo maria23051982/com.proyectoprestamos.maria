@@ -1,4 +1,4 @@
-package prestamosentidades;
+package Controllers;
 
 import antlr.collections.List;
 

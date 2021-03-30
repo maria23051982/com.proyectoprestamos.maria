@@ -1,8 +1,10 @@
-package prestamosentidades;
+package Controllers;
 
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+
+import prestamosentidades.IUsuariobaseDao;
 
 public class Usuariobase implements IUsuariobaseService{
 	
