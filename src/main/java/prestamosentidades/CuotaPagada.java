@@ -1,5 +1,14 @@
 package prestamosentidades;
 
-public class CuotaPagada {
+public class CuotaPagada extends Estado {
+	
+	public CuotaPagada() {
+		this.nombre = "CuotaPagada";
+	}
+	
+	@Override
+	public Estado getEstadoSiguiente() {
+		return this;
+	}
 
 }

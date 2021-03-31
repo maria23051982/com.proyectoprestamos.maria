@@ -28,7 +28,7 @@ public class Aleman extends SistemaAmortizacionabstract {
 	  sumacuotas = 0;
 	
 		 numerodecuotas = 1;
-		 System.out.println("Nro.Cuotas "+numerodecuotas);
+		 System.out.println("Nro.Cuota "+numerodecuotas);
 		 interes = (((tasa)/100)/12)*monto;
 		 System.out.println("Int�res($) "+interes);
 		 sumainteres= sumainteres + interes;
