@@ -1,4 +1,4 @@
-package prestamosentidades;
+package com.example.demo.prestamosentidades;
 
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;

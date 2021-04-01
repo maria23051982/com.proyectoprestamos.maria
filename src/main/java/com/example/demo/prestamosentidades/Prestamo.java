@@ -1,4 +1,4 @@
-package prestamosentidades;
+package com.example.demo.prestamosentidades;
 
 import java.time.LocalDate;
 import java.util.Calendar;

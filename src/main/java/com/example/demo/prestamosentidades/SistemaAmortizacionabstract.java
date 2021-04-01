@@ -1,4 +1,4 @@
-package prestamosentidades;
+package com.example.demo.prestamosentidades;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

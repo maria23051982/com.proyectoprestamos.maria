@@ -1,4 +1,4 @@
-package prestamosentidades;
+package com.example.demo.prestamosentidades;
 
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;

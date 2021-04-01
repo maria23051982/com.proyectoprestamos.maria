@@ -1,4 +1,4 @@
-package prestamosentidades;
+package com.example.demo.prestamosentidades;
 
 import java.util.List;
 
@@ -7,8 +7,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import Controllers.IUsuariobaseService;
-import Controllers.Usuariobase;
+import com.example.demo.controllers.IUsuariobaseService;
+import com.example.demo.controllers.Usuariobase;
 
 
 

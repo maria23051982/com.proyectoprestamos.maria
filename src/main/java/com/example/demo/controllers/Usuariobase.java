@@ -1,10 +1,10 @@
-package Controllers;
+package com.example.demo.controllers;
 
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
-import prestamosentidades.IUsuariobaseDao;
+import com.example.demo.prestamosentidades.IUsuariobaseDao;
 
 public class Usuariobase implements IUsuariobaseService{
 	
