@@ -3,13 +3,14 @@ package com.example.demo.prestamosentidades;
 import lombok.Getter;
 import lombok.Setter;
 
-
 @Getter
 @Setter
 
 public class Americano extends SistemaAmortizacionabstract {
 
-	     public double getInteres() {
+	//   for (numerodecuotas=1 ; numerodecuotas <= cantidaddecuotas-1; numerodecuotas++) {
+	     
+		   public double getInteres() {
          	
         	 return super.getInteres(Math.abs(((getTasa()/100)/12)*getMonto()));
         }
@@ -22,32 +23,34 @@ public class Americano extends SistemaAmortizacionabstract {
 		           	
 		          	 return super.getCuota(Math.abs(getInteres() + getCapitalamortizado()));
 		          }
-	 
-   
-//		{ 
-//		 numerodecuotas = cantidaddecuotas;
-//		 System.out.println("Nro.Cuotas "+numerodecuotas);
-//		 interes = (((tasa)/100)/12)*monto;
-//		 System.out.println("Interes($) "+interes);
-//		 capitalamortizado = monto;
-//		 System.out.println("Capital Amortizado ($) " +capitalamortizado);
-//		 cuota = interes + capitalamortizado;
-//		 System.out.println("Cuota ($) "+cuota);
-//		 System.out.println(" ");
-//		
-//		}
-//	
-//		 {
-//		 sumainteres = ((Tasa/100)/12) * Monto * ((plazo+1)/2); 
-//		 sumacuota =  SumaInteres + Monto;	
-//		 System.out.println("La suma de interes es: $ "+ sumainteres);
-//		 System.out.println("El total a pagar es: $ "+ sumacuotas);
-//		 }
-//		 
-	 
+	   
+		       public double getSaldoRestante(double d) {
+		           	
+		         	 return super.getCuota(Math.abs(getMonto()+getInteres() - getCuota()));
+		         }
+			   
+		       {
+		    	   getInteres(Math.abs(((getTasa()/100)/12)*getMonto()));
+		    	   
+		    	   getCapitalamortizado(Math.abs(getMonto()));
+		    	   
+		    	   getCuota(Math.abs(getInteres() + getCapitalamortizado()));   
+		    	   
+		  	       getSaldoRestante(Math.abs(getMonto()+getInteres() - getCuota()));
+		
+		  		         }
+		  			   
+		     @Override
+		    public double getSumainteres() {
+		    	
+		    	return super.getSumainteres(Math.abs(((getTasa()/100)/12)*getMonto()* ((getCantidaddecuotas()+1)/2)));
+		    }
+			 
+				
+			  @Override
+			public double getSumacuotas() {
+				
+				return super.getSumacuotas(Math.abs(getSumainteres(getSumainteres())+ getMonto()));
+			}
 
 }
-
-
-
-

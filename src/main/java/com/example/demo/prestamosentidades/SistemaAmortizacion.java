@@ -25,7 +25,6 @@ public abstract class SistemaAmortizacion {
 	private double saldorestante;
 	private double cuota;
 	private double capitalamortizado;
-	private double ani;
 	private double sumacuotas;
 	private double sumainteres;
 	
