@@ -3,26 +3,27 @@ package com.example.demo.prestamosentidades;
 import lombok.Getter;
 import lombok.Setter;
 
+
 @Getter
 @Setter
-public class Americano extends SistemaAmortizacion {
 
-		
-		
-//		{
-//
-//		
-//		for (numerodecuotas=1;numerodecuotas<=(cantidaddecuotas-1); numerodecuotas++) {
-//			 System.out.println("Nro.Cuotas "+numerodecuotas);
-//			 interes = (((tasa)/100)/12)*monto;
-//			 System.out.println("Int�res($) "+interes);
-//			 capitalamortizado = 0;
-//			 System.out.println("Capital Amortizado ($) " +capitalamortizado);
-//			 cuota = interes + capitalamortizado;
-//			 System.out.println("Cuota ($) "+cuota);
-//			 System.out.println(" ");
-//		}
-//		
+public class Americano extends SistemaAmortizacionabstract {
+
+	     public double getInteres() {
+         	
+        	 return super.getInteres(Math.abs(((getTasa()/100)/12)*getMonto()));
+        }
+		  public double getCapitalamortizado() {
+	           	
+	          	 return super.getCapitalamortizado(Math.abs(0));
+	          }
+		       
+		       public double getCuota() {
+		           	
+		          	 return super.getCuota(Math.abs(getInteres() + getCapitalamortizado()));
+		          }
+	 
+   
 //		{ 
 //		 numerodecuotas = cantidaddecuotas;
 //		 System.out.println("Nro.Cuotas "+numerodecuotas);
@@ -43,7 +44,10 @@ public class Americano extends SistemaAmortizacion {
 //		 System.out.println("El total a pagar es: $ "+ sumacuotas);
 //		 }
 //		 
-//		 }
-  }
-		 
+	 
+
+}
+
+
+
 

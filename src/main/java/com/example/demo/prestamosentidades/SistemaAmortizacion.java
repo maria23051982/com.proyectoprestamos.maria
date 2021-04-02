@@ -31,4 +31,3 @@ public abstract class SistemaAmortizacion {
 	
 }
 
-
