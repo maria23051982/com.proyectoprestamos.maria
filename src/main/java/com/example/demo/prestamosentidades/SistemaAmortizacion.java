@@ -9,24 +9,26 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-
-
 @Data
 @Entity
 @NoArgsConstructor
 @AllArgsConstructor
 public abstract class SistemaAmortizacion {
-	
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long id; 
-	private int numerodecuotas;
+	private Long id;
+	private int numeroDeCuotas;
 	private double interes;
-	private double saldorestante;
+	private double saldoRestante;
 	private double cuota;
-	private double capitalamortizado;
-	private double sumacuotas;
-	private double sumainteres;
-	
-}
+	private double capitalAmortizado;
+	private double sumaInteres;
+	private double tasa;
+	private double monto;
 
+	public double getSumaCuotas() {
+		return getSumaInteres() + getMonto();
+	}
+
+}
