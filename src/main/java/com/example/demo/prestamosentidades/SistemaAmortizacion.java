@@ -9,6 +9,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+
 @Data
 @Entity
 @NoArgsConstructor
@@ -26,9 +27,8 @@ public abstract class SistemaAmortizacion {
 	private double sumaInteres;
 	private double tasa;
 	private double monto;
-
-	public double getSumaCuotas() {
-		return getSumaInteres() + getMonto();
-	}
-
+	private double sumacuotas;
+	private double sumacapitalamortizado; //Este es para el Frances, para buscar un atributo que me evitara pedir 2 veces el mismo atributo a la clase padre.
+	
+	
 }

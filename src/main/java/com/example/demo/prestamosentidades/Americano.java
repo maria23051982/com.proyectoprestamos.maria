@@ -18,28 +18,22 @@ public class Americano extends SistemaAmortizacion {
 	}
 
 	public double getCuota() {
-		return Math.abs(getInteres() + getCapitalamortizado());
+		return getInteres() + getCapitalamortizado();
 	}
 
 	public double getSaldoRestante(double d) {
 
-		return getMonto() + getInteres() - getCuota();
+		return getMonto() + getInteres() - (getCuota()*getNumeroDeCuotas());
 	}
 
-//	{
-//		getInteres(Math.abs(((getTasa() / 100) / 12) * getMonto()));
-//
-//		getCapitalamortizado(Math.abs(getMonto()));
-//
-//		getCuota(Math.abs(getInteres() + getCapitalamortizado()));
-//
-//		getSaldoRestante(Math.abs(getMonto() + getInteres() - getCuota()));
-//
-//	}
 
-	@Override
 	public double getSumaInteres() {
 		return ((getTasa() / 100) / 12) * getMonto() * ((getNumeroDeCuotas() + 1) / 2);
 	}
 
+	
+	public double getSumacuotas() {
+		
+		return getSumaInteres() + getMonto();
+	}
 }
