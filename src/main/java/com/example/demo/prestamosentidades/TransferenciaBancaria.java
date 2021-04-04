@@ -1,5 +1,5 @@
 package com.example.demo.prestamosentidades;
 
-public class TransferenciaBancaria {
+public class TransferenciaBancaria extends FormasPagos {
 
 }

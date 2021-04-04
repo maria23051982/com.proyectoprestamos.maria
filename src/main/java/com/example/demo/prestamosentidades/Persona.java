@@ -24,7 +24,7 @@ public class Persona extends Usuario implements Serializable{
 	private String nombre;
 	private String apellido;
 	private Long dni;
-	public void setFechaNacimiento(Date date) {
+	public void setFechaNacimiento(Date fecha) {
 		
 		
 	}

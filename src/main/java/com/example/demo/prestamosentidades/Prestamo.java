@@ -1,22 +1,32 @@
 package com.example.demo.prestamosentidades;
 
-import java.time.LocalDate;
-import java.util.Calendar;
 
-import java.util.Scanner;
+import java.util.Date;
+
 
 import lombok.AllArgsConstructor;
-import lombok.Data;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
-@Data @AllArgsConstructor @NoArgsConstructor
+import lombok.Setter;
 
+@AllArgsConstructor @NoArgsConstructor
+@Getter @Setter
 public class Prestamo {
  
 	private double monto;
-	private long cantidaddecuotas;
-	private Calendar fechaprestamo;
+	private int numerodecuotas;
+	private Date fechaprestamo;
 	private double tasa;
-	Cuota listadocuotas;
-  	
+	//Cuota listadocuotas;
+	
+public void setActivo(boolean b) { //Estas 2 ultimas me lo creo, me pedia crearla 04/04	
+		
+	}
+	public boolean getActivo() {
+	
+		return false;
+	}
+
+
 }
 
