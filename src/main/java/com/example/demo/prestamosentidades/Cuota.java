@@ -1,5 +1,6 @@
 package com.example.demo.prestamosentidades;
 
+
 import java.util.Date;
 
 import javax.persistence.ManyToOne;
@@ -12,9 +13,9 @@ import lombok.NoArgsConstructor;
 
 public class Cuota {
 
-	private Date fechadevencimiento;
-	private Date fechaActual;
-	
+	private Date fechavencimiento;
+	private Date fechapago;
+
 	@ManyToOne
 	private FormasPagos formaspagos;
 	@ManyToOne
