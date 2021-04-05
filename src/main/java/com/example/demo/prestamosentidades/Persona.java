@@ -2,7 +2,6 @@ package com.example.demo.prestamosentidades;
 
 
 	import java.io.Serializable;
-import java.util.Date;
 
 import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
@@ -24,7 +23,8 @@ public class Persona extends Usuario implements Serializable{
 	private String nombre;
 	private String apellido;
 	private Long dni;
-	public void setFechaNacimiento(Date fecha) {
+	
+    {
 		
 		
 	}

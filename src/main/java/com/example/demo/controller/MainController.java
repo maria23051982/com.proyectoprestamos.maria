@@ -1,8 +1,6 @@
 package com.example.demo.controller;
 
 import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -37,7 +35,6 @@ public class MainController {
 	@RequestMapping("/alta")
 	public String alta(Model model) {
 		Persona persona = new Persona();
-		persona.setFechaNacimiento(new Date());
 		model.addAttribute("persona", persona);
 
 		return "alta";
@@ -64,10 +61,10 @@ public class MainController {
 
 	@RequestMapping(value = "/save", method = { RequestMethod.POST, RequestMethod.PUT })
 	public String save(@RequestParam(value = "nombre") String nombre, @RequestParam(value = "apellido") String apellido,
-			@RequestParam(value = "dni") long dni, @RequestParam(value = "fechaNacimiento") String fechaNacimiento,
+			@RequestParam(value = "dni") long dni,
 			Model model) throws ParseException {
 
-		Date fecha = new SimpleDateFormat("yyyy-mm-dd").parse(fechaNacimiento);
+		
 
 		Persona persona = new Persona(apellido, nombre, dni);
 		persona.setId((long) usuarioRepository.count());
@@ -79,16 +76,13 @@ public class MainController {
 	@RequestMapping(value = "/edit/{id}", method = { RequestMethod.POST, RequestMethod.PUT })
 	public String edit(@PathVariable(value = "id") Integer id, @RequestParam(value = "nombre") String nombre,
 			@RequestParam(value = "apellido") String apellido, @RequestParam(value = "dni") long dni,
-			@RequestParam(value = "fechaNacimiento") String fechaNacimiento,
 			@RequestParam(value = "activo", required = false) Boolean activo, Model model) throws ParseException {
 
-		Date fecha = new SimpleDateFormat("yyyy-mm-dd").parse(fechaNacimiento);
 
 		Persona persona = usuarioRepository.findById(id);
 		persona.setApellido(apellido);
 		persona.setNombre(nombre);
 		persona.setDni(dni);
-		persona.setFechaNacimiento(fecha);
 //		persona.setActivo(activo != null);
 		persona.setActivo(activo == null ? false : true);
 
