@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lange="es"
+xmins:th=http://www.thymeleaf.org>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+        <header>
+        	<nav>
+        		<ul>
+        			<li><a href="index.html">Index</a>
+        			<li><a href="micuenta.html">Mi cuenta</a>
+        			<li><a href="registrarse.html">Registrarse</a>
+        			<li><a href="nosotros.html">sobre nosotros</a>
+        				
+        			</li>
+        		</ul>
+        	</nav>
+        	<center>
+        	 <h3><font color = white>Registre la forma de pago</font><h3/>
+        	 </center>
+     		 <p>
+       	 	 <body background="fondo.jpg">
+           	 </p>
+        	 <div>
+ 	    	 <form>
+ 	    	 <center>
+ 	    	 <font color = white>
+  <div class="form-row">
+    <div class="col">
+     <label for="inputnumeroentidad">Numero entidad</label>
+      <input type="text" class="form-control" placeholder="numeroentidad">
+    </div>
+    <div class="col">
+     <label for="inputnombreentidad">Nombre Entidad</label>
+      <input type="text" class="form-control" placeholder="nombreentidad>
+    </div>
+  </div>
+  <div class="form-group col-md-6">
+  <center>
+      <label for="numerodecuenta">Numero de cuenta</label>
+      <input type="text" class="form-control" id="numerodecuenta>
+      </center>
+    </div>
+    <div class="form-group col-md-6">
+    <center>
+      <label for="fechadepago">fecha de pago</label>
+      <input type="date" class="form-control" id="fechadepago">
+      </center>
+    </div>
+  </div>
+  <div class="form-group">
+  <center>
+    <label for="montopagado">Monto a pagar</label>
+    <input type="text" class="form-control" id="montopagado">
+    </center>
+  <div class="form-row">
+  <center>
+    <div class="form-group col-md-6">
+      <label for="numerodeoperacion">Numero de operacion</label>
+      <input type="text" class="form-control" id="numerodeoperacion">
+      </center>
+    </div>
+    <div>
+    <center>
+     <fieldset class="form-group">
+    <div class="row">
+      <legend class="col-form-label col-sm-2 pt-0">Formas de pago</legend>
+      <div class="col-sm-10">
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="formasdepago" id="efectivo" value="option1" checked>
+          <label class="form-check-label" for="gridRadios1">
+            Efectivo
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="formasdepago" id="debito" value="option2">
+          <label class="form-check-label" for="gridRadios2">
+            Debito Automatico
+          </label>
+        </div>
+        <div class="form-check disabled">
+          <input class="form-check-input" type="radio" name="formasdepago" id="transferenciabancaria" value="option3" disabled>
+          <label class="form-check-label" for="gridRadios3">
+            Transferencia Bancaria
+          </label>
+        </div>
+      </div>
+    </div>
+  </fieldset>
+  </center>
+  </div>
+  <div class="form-group">
+  </div>
+  <center>
+  <button type="submit" class="MainController.java">Enviar</button>
+  </center>
+  </font>
+  </center>
+</form>
+             </div>
+             </header>
+       
+    </body>
+</html>
