@@ -22,17 +22,19 @@ xmins:th=http://www.thymeleaf.org>
         			</li>
         		</ul>
         	</nav>
-        	 <h1>Por favor active su cuenta llenando los siguientes campos:<h1/>
+        	 <h3>Por favor active su cuenta llenando los siguientes campos:<h3/>
      		 <p>
-       	 	 <body background="fondo.png">
+       	 	 <body background="fondo.jpg">
            	 </p>
         	 <div>
  	    	 <form>
   <div class="form-row">
     <div class="col">
+     <label for="inputFirstname">Nombre</label>
       <input type="text" class="form-control" placeholder="First name">
     </div>
     <div class="col">
+     <label for="inputLastname">Apellido</label>
       <input type="text" class="form-control" placeholder="Last name">
     </div>
   </div>
@@ -46,27 +48,21 @@ xmins:th=http://www.thymeleaf.org>
     </div>
   </div>
   <div class="form-group">
-    <label for="inputAddress">Address</label>
+    <label for="inputAddress">Direccion</label>
     <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
   <div class="form-row">
     <div class="form-group col-md-6">
-      <label for="inputCity">City</label>
+      <label for="inputCity">Ciudad</label>
       <input type="text" class="form-control" id="inputCity">
     </div>
     <div class="form-group col-md-2">
-      <label for="inputZip">Zip</label>
+      <label for="inputZip">Codigo postal</label>
       <input type="text" class="form-control" id="inputZip">
     </div>
   </div>
   <div class="form-group">
-    <div class="form-check">
-      <input class="form-check-input" type="checkbox" id="gridCheck">
-      <label class="form-check-label" for="gridCheck">
-        Check me out
-      </label>
-    </div>
   </div>
-  <button type="submit" class="MainController.java">Sign in</button>
+  <button type="submit" class="MainController.java">Enviar</button>
 </form>
              </div>
              </header>
