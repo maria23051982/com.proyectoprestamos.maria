@@ -1,26 +1,29 @@
 package com.example.demo.prestamosentidades;
 
 
-import java.util.Date;
-
 import javax.persistence.Enumerated;
 import javax.persistence.ManyToOne;
 
 import lombok.AllArgsConstructor;
-import lombok.Data;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
-@Data @AllArgsConstructor @NoArgsConstructor
+@AllArgsConstructor @NoArgsConstructor
+@Setter @Getter
 
-public class Cuota {
+public class Cuota extends Prestamo{
 
-	private Date fechavencimiento;
-	private Date fechapago;
 
+	public Cuota getListadocuotas() {
+		return getListadocuotas() ;
+	}
+	
 	@ManyToOne
 	private FormasPagos formaspagos;
 	@Enumerated
 	private Estado estado;
 	@ManyToOne
 	private Refinanciacion refinanciacion;
+	
 }

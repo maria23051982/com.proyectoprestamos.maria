@@ -9,8 +9,7 @@ import lombok.Setter;
 
 public class Aleman extends SistemaAmortizacion {
 	
-
-		
+			
 		public double getInteres(double d) {
 			
 			return ((getTasa() / 100) / 12) * getMonto();

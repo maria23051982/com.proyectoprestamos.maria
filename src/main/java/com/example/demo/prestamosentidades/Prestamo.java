@@ -17,7 +17,7 @@ public class Prestamo {
 	private int numerodecuotas;
 	private Date fechaprestamo;
 	private double tasa;
-	//Cuota listadocuotas;
+	Cuota listadocuotas;
 	
 public void setActivo(boolean b) { //Estas 2 ultimas me lo creo, me pedia crearla 04/04	
 		

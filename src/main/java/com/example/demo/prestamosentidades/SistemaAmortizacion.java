@@ -1,5 +1,7 @@
 package com.example.demo.prestamosentidades;
 
+import java.util.ArrayList;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -14,7 +16,7 @@ import lombok.NoArgsConstructor;
 @Entity
 @NoArgsConstructor
 @AllArgsConstructor
-public abstract class SistemaAmortizacion {
+public abstract class SistemaAmortizacion extends Prestamo {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -30,5 +32,18 @@ public abstract class SistemaAmortizacion {
 	private double sumacuotas;
 	private double sumacapitalamortizado; //Este es para el Frances, para buscar un atributo que me evitara pedir 2 veces el mismo atributo a la clase padre.
 	
-	
+
+/*	 ArrayList<Double> lista = new ArrayList<Double>();
+ 
+	 for (int i = 1; i<= numeroDeCuotas.size(0); i++) {
+		 
+		 lista.add(getInteres());
+	     lista.add(getCuota());
+		 lista.add(getCapitalAmortizado());
+		 lista.add(getSaldoRestante());
+		 lista.add(getSumaInteres());
+		 lista.add(getSumacuotas());
+	 }
+	 */
+	 
 }
