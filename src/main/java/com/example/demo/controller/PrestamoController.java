@@ -62,7 +62,7 @@ public class PrestamoController {
 
 		Date fecha = new SimpleDateFormat("yyyy-mm-dd").parse(fechaprestamo);
 
-		Prestamo prestamo = new Prestamo(monto, numerodecuotas, fecha, tasa);
+		Prestamo prestamo = new Prestamo(monto, numerodecuotas, fecha, tasa, null);
 		prestamo.setNumerodecuotas((int) prestamoRepository.count());
 		prestamoRepository.save(prestamo);
 		model.addAttribute("prestamo", prestamo);
