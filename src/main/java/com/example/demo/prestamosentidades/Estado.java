@@ -1,35 +1,24 @@
 package com.example.demo.prestamosentidades;
 
-import java.util.Date;
+import javax.persistence.Entity;
 
-public abstract class Estado {
+@Entity
 
-	protected String nombre;
-	private Date fecha = new Date();
-		
-	
-	public abstract Estado getEstadoSiguiente();
+enum Estado {
 
+CUOTA_VENCIDA("Cuota Vencida"), CUOTA_PAGADA("Cuota Pagada"),CUOTA_REFINANCIADA("Cuota Refinanciada");
 
-	public String getNombre() {
-		return nombre;
-	}
+private String descripcion;
 
-
-	public void setNombre(String nombre) {
-		this.nombre = nombre;
-	}
-
-
-	public Date getFecha() {
-		return fecha;
-	}
-
-
-	public void setFecha(Date fecha) {
-		this.fecha = fecha;
-	}
-	
+private Estado(String descripcion) {
+	this.descripcion = descripcion;
 	
 }
-
+ public String getDescripcion() {
+	 return descripcion;
+ }
+ 
+ public void setDescripcion(String descripcion) {
+	 this.descripcion = descripcion;
+ }
+}

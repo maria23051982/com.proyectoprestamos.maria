@@ -3,6 +3,7 @@ package com.example.demo.prestamosentidades;
 
 import java.util.Date;
 
+import javax.persistence.Enumerated;
 import javax.persistence.ManyToOne;
 
 import lombok.AllArgsConstructor;
@@ -18,7 +19,7 @@ public class Cuota {
 
 	@ManyToOne
 	private FormasPagos formaspagos;
-	@ManyToOne
+	@Enumerated
 	private Estado estado;
 	@ManyToOne
 	private Refinanciacion refinanciacion;
