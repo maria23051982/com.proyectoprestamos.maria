@@ -19,7 +19,5 @@ public class Cuota extends Prestamo{
 	private FormasPagos formaspagos;
 	@Enumerated
 	private Estado estado;
-	@ManyToOne
-	private Refinanciacion refinanciacion;
-	
+
 }
