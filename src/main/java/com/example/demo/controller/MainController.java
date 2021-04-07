@@ -16,7 +16,7 @@ import com.example.demo.repositorios.UsuarioRepository;
 import com.example.demo.prestamosentidades.Persona;
 
 @RestController
-@RequestMapping("/persona")
+@RequestMapping("/")
 public class MainController {
 
 	@Autowired
@@ -32,83 +32,5 @@ public class MainController {
 		return "about";
 	}
 
-	@RequestMapping("/alta")
-	public String alta(Model model) {
-		Persona persona = new Persona();
-		model.addAttribute("persona", persona);
-
-		return "alta";
-	}
-
-	@RequestMapping("/listado")
-	public String list(Model model) {
-		model.addAttribute("persona", usuarioRepository.findAllActive());
-		return "listado";
-	}
-
-	@RequestMapping("/borrados")
-	public String deleted(Model model) {
-		model.addAttribute("persona", usuarioRepository.findAllNonActive());
-		return "listado";
-	}
-
-	@RequestMapping(value = "/persona", method = { RequestMethod.POST, RequestMethod.PUT })
-	public String edit(@RequestParam(value = "id") int id, Model model) {
-		Persona persona = usuarioRepository.findById(id);
-		model.addAttribute("persona", persona);
-		return "editar";
-	}
-
-	@RequestMapping(value = "/save", method = { RequestMethod.POST, RequestMethod.PUT })
-	public String save(@RequestParam(value = "nombre") String nombre, @RequestParam(value = "apellido") String apellido,
-			@RequestParam(value = "dni") long dni,
-			Model model) throws ParseException {
-
-		
-
-		Persona persona = new Persona(apellido, nombre, dni);
-		persona.setId((long) usuarioRepository.count());
-		usuarioRepository.save(persona);
-		model.addAttribute("persona", persona);
-		return "redirect:/listado";
-	}
-
-	@RequestMapping(value = "/edit/{id}", method = { RequestMethod.POST, RequestMethod.PUT })
-	public String edit(@PathVariable(value = "id") Integer id, @RequestParam(value = "nombre") String nombre,
-			@RequestParam(value = "apellido") String apellido, @RequestParam(value = "dni") long dni,
-			@RequestParam(value = "activo", required = false) Boolean activo, Model model) throws ParseException {
-
-
-		Persona persona = usuarioRepository.findById(id);
-		persona.setApellido(apellido);
-		persona.setNombre(nombre);
-		persona.setDni(dni);
-//		persona.setActivo(activo != null);
-		persona.setActivo(activo == null ? false : true);
-
-		return "redirect:/listado";
-	}
-
-	@PostMapping(value = "/conf-borrar")
-	public String borrar(@RequestParam(value = "id") int id, Model model) {
-		Persona persona = usuarioRepository.findById(id);
-		model.addAttribute("persona", persona);
-		return "confirmarBorrado";
-	}
-
-	@PostMapping(value = "/borrar/{id}")
-	public String personaBorrada(@PathVariable(value = "id") int id, Model model) {
-		try {
-			usuarioRepository.delete(id);
-		} catch (Exception e) {
-			model.addAttribute("error", "No se pudo eliminar el registro");
-			return "error";
-		}
-		return "personaBorrada";
-	}
-
-	@GetMapping(value = "/error")
-	public String error() {
-		return "error";
-	}
+	
 }

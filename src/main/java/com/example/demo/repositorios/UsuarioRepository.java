@@ -5,13 +5,14 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 import org.springframework.context.annotation.Scope;
+import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Component;
 
 import com.example.demo.prestamosentidades.Persona;
+import com.example.demo.prestamosentidades.Usuario;
 
 @Component
-@Scope("singleton")
-public class UsuarioRepository {
+public interface UsuarioRepository extends JpaRepository<Persona, Long> {
 	List<Persona> persona = new ArrayList<>();
 	
 	public void save(Persona p) {
@@ -25,7 +26,7 @@ public class UsuarioRepository {
 		return persona;
 	}
 
-	public int count() {
+	public long count() {
 		return persona.size();
 	}
 	public Persona findById(int ix) {
