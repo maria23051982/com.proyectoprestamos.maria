@@ -11,7 +11,6 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-
 @Data
 @Entity
 @NoArgsConstructor
@@ -33,17 +32,23 @@ public abstract class SistemaAmortizacion extends Prestamo {
 	private double sumacapitalamortizado; //Este es para el Frances, para buscar un atributo que me evitara pedir 2 veces el mismo atributo a la clase padre.
 	
 
-/*	 ArrayList<Double> lista = new ArrayList<Double>();
+	/* ArrayList<Double> listadocuotas = new ArrayList<Double>() 
  
-	 for (int i = 1; i<= numeroDeCuotas.size(0); i++) {
+	 for (int i = 1; i<= numeroDeCuotas.size(0); i++) { 
 		 
-		 lista.add(getInteres());
-	     lista.add(getCuota());
-		 lista.add(getCapitalAmortizado());
-		 lista.add(getSaldoRestante());
-		 lista.add(getSumaInteres());
-		 lista.add(getSumacuotas());
+		 listadocuotas.add(getInteres());
+	     listadocuotas.add(getCuota());
+		 listadocuotas.add(getCapitalAmortizado());
+		 listadocuotas.add(getSaldoRestante());
+		 listadocuotas.add(getSumaInteres());
+		 listadocuotas.add(getSumacuotas());
 	 }
-	 */
-	 
+	
+*/
 }
+
+
+
+
+
+
