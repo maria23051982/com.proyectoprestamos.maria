@@ -1,6 +1,7 @@
 package com.example.demo.prestamosentidades;
 
 
+import javax.persistence.Entity;
 import javax.persistence.Enumerated;
 import javax.persistence.ManyToOne;
 
@@ -11,7 +12,7 @@ import lombok.Setter;
 
 @AllArgsConstructor @NoArgsConstructor
 @Setter @Getter
-
+@Entity
 public class Cuota extends Prestamo{
 
 

@@ -1,11 +1,13 @@
 package com.example.demo.prestamosentidades;
 
+import javax.persistence.Entity;
+
 import lombok.Getter;
 import lombok.Setter;
 
 @Getter
 @Setter
-
+@Entity
 public class Frances extends SistemaAmortizacion {
 	
 

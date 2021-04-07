@@ -1,9 +1,5 @@
 package com.example.demo.prestamosentidades;
 
-import javax.persistence.Entity;
-
-@Entity
-
 enum Estado {
 
 CUOTA_VENCIDA("Cuota Vencida"), CUOTA_PAGADA("Cuota Pagada"),CUOTA_REFINANCIADA("Cuota Refinanciada");

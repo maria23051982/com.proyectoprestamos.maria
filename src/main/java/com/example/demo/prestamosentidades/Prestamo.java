@@ -3,6 +3,7 @@ package com.example.demo.prestamosentidades;
 
 import java.util.Date;
 
+import javax.persistence.Entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -11,6 +12,7 @@ import lombok.Setter;
 
 @AllArgsConstructor @NoArgsConstructor
 @Getter @Setter
+@Entity
 public class Prestamo {
  
 	private double monto;

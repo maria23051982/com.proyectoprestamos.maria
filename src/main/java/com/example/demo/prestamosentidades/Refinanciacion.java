@@ -2,11 +2,13 @@ package com.example.demo.prestamosentidades;
 
 import java.sql.Time;
 
+import javax.persistence.Entity;
+
 import lombok.Getter;
 import lombok.Setter;
 @Getter
 @Setter
-
+@Entity
 public class Refinanciacion extends Cuota {
 
     private Time fechaVencimiento;
