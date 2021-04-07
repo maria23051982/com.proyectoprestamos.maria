@@ -31,6 +31,5 @@ public class Prestamo{
 	@OneToMany
 	List<Cuota>listadocuotas;
 	
-
 }
 
