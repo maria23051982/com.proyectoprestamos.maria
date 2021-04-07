@@ -29,7 +29,7 @@ List<Prestamo> prestamo = new ArrayList<>();
 		try {
 			return prestamo.get(numerodecuotas);
 		} catch (Exception e) {
-			throw new RuntimeException("No existe la persona con id "+numerodecuotas);
+			throw new RuntimeException("No existe la cuota con id "+numerodecuotas);
 		}
 	}
 

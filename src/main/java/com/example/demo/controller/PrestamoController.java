@@ -41,10 +41,10 @@ public class PrestamoController {
 		return "alta";
 	}
 
-	@RequestMapping("/listado")
+	@RequestMapping("/listadoprestamo")
 	public String list(Model model) {
 		model.addAttribute("prestamo", prestamoRepository.findAllActive());
-		return "listado";
+		return "listadoprestamo";
 	}
 
 
@@ -56,18 +56,20 @@ public class PrestamoController {
 	}
 
 	@RequestMapping(value = "/save", method = { RequestMethod.POST, RequestMethod.PUT })
-	public String save(@RequestParam(value = "monto") Double monto, @RequestParam(value = "tasa") Double tasa,
-			@RequestParam(value = "numerodecuotas") int numerodecuotas, @RequestParam(value = "fechaprestamo") String fechaprestamo,
+	public String save(@RequestParam(value = "interes") Double interes, @RequestParam(value = "capitalamortizado") Double capitalamortizado,
+			@RequestParam(value = "numerodecuotas") int numerodecuotas, @RequestParam(value = "fechaprestamo") String fechaprestamo,  @RequestParam(value = "cuota") Double cuota,
+			 @RequestParam(value = "saldorestante") Double saldorestante,  @RequestParam(value = "sumacuotas") Double sumacuotas, @RequestParam(value = "sumainteres") Double sumainteres,
 			Model model) throws ParseException {
 
 		Date fecha = new SimpleDateFormat("yyyy-mm-dd").parse(fechaprestamo);
 
-		Prestamo prestamo = new Prestamo(monto, numerodecuotas, fecha, tasa, null);
+	/*	Prestamo prestamo = new Prestamo(numerodecuotas,interes,capitalamortizado,cuota,saldorestante,sumacuotas,sumainteres);
 		prestamo.setNumerodecuotas((int) prestamoRepository.count());
 		prestamoRepository.save(prestamo);
 		model.addAttribute("prestamo", prestamo);
-		return "redirect:/listado";
+		return "redirect:/listadoprestamo";
 	}
 
+*/
+	}
 
-}
