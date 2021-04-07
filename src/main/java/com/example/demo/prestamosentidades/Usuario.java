@@ -2,15 +2,11 @@ package com.example.demo.prestamosentidades;
 
 
 import java.io.Serializable;
-import java.util.HashSet;
-import java.util.Set;
-
 import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
 import javax.validation.constraints.Email;
 
 import lombok.AllArgsConstructor;
@@ -35,9 +31,7 @@ public class Usuario implements Serializable{
 
 	@Email
 	private String email;
-	@OneToMany
-	private Set<Rol> roles  = new HashSet<>();
-		
+	
 }
 
 	
