@@ -4,15 +4,16 @@ package com.example.demo.controller;
 import java.util.Date;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
 import com.example.demo.repositorios.PrestamoRepository;
 import com.example.demo.prestamosentidades.Prestamo;
 
-@Controller
-@RequestMapping("/")
+@RestController
+@RequestMapping("/prestamo")
 
 public class PrestamoController {
 	@Autowired
