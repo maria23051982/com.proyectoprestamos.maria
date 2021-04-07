@@ -1,7 +1,5 @@
 package com.example.demo.prestamosentidades;
 
-
-
 import java.util.Date;
 import java.util.List;
 
@@ -16,20 +14,23 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-@AllArgsConstructor @NoArgsConstructor
-@Getter @Setter
+@AllArgsConstructor
+@NoArgsConstructor
+@Getter
+@Setter
 @Entity
-public class Prestamo{
-	
+public class Prestamo {
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	private Double monto;
 	private Integer plazo;
-	private Date fechaprestamo;
+	private Date fechaPrestamo;
 	private Double tasa;
-	@OneToMany
-	List<Cuota>listadocuotas;
-	
-}
+	private String tipoPrestamo;
 
+	@OneToMany
+	List<Cuota> listadoCuotas;
+
+}
