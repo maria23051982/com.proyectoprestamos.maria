@@ -4,7 +4,6 @@ package com.example.demo.prestamosentidades;
 import javax.persistence.Entity;
 import javax.persistence.Enumerated;
 import javax.persistence.ManyToOne;
-
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -14,8 +13,8 @@ import lombok.Setter;
 @Setter @Getter
 @Entity
 public class Cuota extends Prestamo{
-
-
+	
+	private Integer numerodecuotas;
 	@ManyToOne
 	private FormasPagos formaspagos;
 	@Enumerated

@@ -24,7 +24,7 @@ public class Aleman extends SistemaAmortizacion {
 
 		public double getCapitalAmortizado(double d) {
 			
-			return getMonto()/getNumeroDeCuotas();
+			return getMonto()/getPlazo();
 		}
 		
 
@@ -42,7 +42,7 @@ public class Aleman extends SistemaAmortizacion {
 	  
 	    public double getSaldoRestante(double d) {
 		
-		return (getMonto()-(getCapitalAmortizado()*getNumeroDeCuotas()));
+		return (getMonto()-(getCapitalAmortizado()*getPlazo()));
 	}
 
 	

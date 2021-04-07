@@ -23,7 +23,7 @@ public class Frances extends SistemaAmortizacion {
 
         public double getCuota(double d) {
 		
-		   return getMonto()*(((getTasa()/100)/12) /(1- (Math.pow (1+ (getTasa()/100)/12, -getNumeroDeCuotas()))));
+		   return getMonto()*(((getTasa()/100)/12) /(1- (Math.pow (1+ (getTasa()/100)/12, -getPlazo()))));
 	     }
         
         public double getSumacuotas(double d) {

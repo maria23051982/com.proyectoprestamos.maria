@@ -25,12 +25,13 @@ public class Americano extends SistemaAmortizacion {
 
 	public double getSaldoRestante(double d) {
 
-		return getMonto() + getInteres() - (getCuota()*getNumeroDeCuotas());
+		return getMonto() + getInteres() - (getCuota()*getPlazo());
 	}
 
 
+
 	public double getSumaInteres() {
-		return ((getTasa() / 100) / 12) * getMonto() * ((getNumeroDeCuotas() + 1) / 2);
+		return ((getTasa() / 100) / 12) * getMonto() * ((getPlazo() + 1) / 2);
 	}
 
 	
