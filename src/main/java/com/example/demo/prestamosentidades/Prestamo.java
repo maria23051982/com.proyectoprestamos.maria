@@ -3,8 +3,10 @@ package com.example.demo.prestamosentidades;
 
 
 import java.util.Date;
+import java.util.List;
 
 import javax.persistence.Entity;
+import javax.persistence.OneToMany;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -21,16 +23,9 @@ public class Prestamo{
 	private int numerodecuotas;
 	private Date fechaprestamo;
 	private double tasa;
-	Cuota listadocuotas;
+	@OneToMany
+	List<Cuota>listadocuotas;
 	
-public void setActivo(boolean b) { //Estas 2 ultimas me lo creo, me pedia crearla 04/04	
-		
-	}
-	public boolean getActivo() {
-	
-		return false;
-	}
-
 
 }
 

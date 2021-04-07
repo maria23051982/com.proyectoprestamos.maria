@@ -2,7 +2,6 @@ package com.example.demo.repositorios;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collectors;
 
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
@@ -33,11 +32,5 @@ List<Prestamo> prestamo = new ArrayList<>();
 		}
 	}
 
-	public List<Prestamo> findAllNonActive() {
-		return prestamo.stream().filter(p -> !p.getActivo()).collect(Collectors.toList());
-	}
 
-	public List<Prestamo> findAllActive() {
-		return prestamo.stream().filter(p -> p.getActivo()).collect(Collectors.toList());
-	}
 }

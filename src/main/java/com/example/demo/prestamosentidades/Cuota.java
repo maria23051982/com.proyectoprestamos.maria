@@ -16,10 +16,6 @@ import lombok.Setter;
 public class Cuota extends Prestamo{
 
 
-	public Cuota getListadocuotas() {
-		return getListadocuotas() ;
-	}
-	
 	@ManyToOne
 	private FormasPagos formaspagos;
 	@Enumerated
