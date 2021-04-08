@@ -4,7 +4,7 @@ public class Frances extends SistemaAmortizacion {
 	private static final long serialVersionUID = 1L;
 
 	public Frances() {
-		// TODO Auto-generated constructor stub
+		
 	}
 
 	public double getInteres(double d) {
@@ -14,7 +14,7 @@ public class Frances extends SistemaAmortizacion {
 
 	public double getSumaInteres(double d) {
 
-		return (getSumaInteres() + getInteres());
+		return getSumaInteres(serialVersionUID) + getInteres(d);
 	}
 
 	public double getCuota(double d) {
@@ -25,18 +25,18 @@ public class Frances extends SistemaAmortizacion {
 
 	public double getSumacuotas(double d) {
 
-		return getSumaCuotas() + getCuota();
+		return getSumacapitalamortizado() + getCuota(d);
 
 	}
 
 	public double getCapitalAmortizado(double d) {
 
-		return getCuota() - getInteres();
+		return getCuota(d) - getInteres(d);
 	}
 
 	public double getSumacapitalamortizado() {
 
-		return getSumacapitalamortizado() + getCapitalAmortizado();
+		return getSumacapitalamortizado() + getCapitalAmortizado(serialVersionUID);
 	}
 
 	public double getSaldoRestante(double d) {

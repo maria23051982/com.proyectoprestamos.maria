@@ -1,6 +1,6 @@
 package com.example.demo.controller;
 
-import java.text.ParseException;
+
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,30 +14,29 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.demo.prestamosentidades.Persona;
+
 import com.example.demo.repositorios.PersonaRepository;
 
 @RestController
-@RequestMapping("/persona")
+@RequestMapping("/personas")
 public class PersonaController {
 
 	@Autowired
 	PersonaRepository personaRepository;
 
-	@RequestMapping("/alta")
+	@RequestMapping("")
 	public String alta(Model model) {
-		Persona persona = new Persona();
-		model.addAttribute("persona", persona);
-
-		return "alta";
+		model.addAttribute("persona", new Persona());
+		return "personas/alta";
 	}
 
 	@RequestMapping("/listado")
 	public String list(Model model) {
-		model.addAttribute("persona", personaRepository.findAll());
-		return "listado";
+		model.addAttribute("personas", personaRepository.findAll());
+		return "personas/listado";
 	}
 
-	@RequestMapping(value = "/persona", method = { RequestMethod.POST, RequestMethod.PUT })
+	@RequestMapping(value = "/personas", method = { RequestMethod.POST, RequestMethod.PUT })
 	public String edit(@RequestParam(value = "id") Long id, Model model) {
 
 		Optional<Persona> persona = personaRepository.findById(id);
@@ -45,32 +44,26 @@ public class PersonaController {
 		if (!persona.isPresent())
 			return "redirect:/error";
 
-		model.addAttribute("persona", persona.get());
+		model.addAttribute("personas", persona.get());
 		return "editar";
 	}
 
-	@RequestMapping(value = "/save", method = { RequestMethod.POST, RequestMethod.PUT })
-	public String save(@RequestParam(value = "nombre") String nombre, @RequestParam(value = "apellido") String apellido,
-			@RequestParam(value = "dni") long dni, Model model) throws ParseException {
+	@PostMapping("/save")
+	public String save(@RequestParam(value = "dni", required = true) Long dni,
+			@RequestParam(value = "nombre", required = true) String nombre,
+			@RequestParam(value = "apellido", required = true) String apellido) {
+		
+	
+		Persona persona = personaRepository.findByDni(dni).get();
+		if (persona == null)
+			return "redirect:/error";
 
-//		Persona persona = new Persona(apellido, nombre, dni);
-//		persona.setId((long) usuarioRepository.count());
-//		usuarioRepository.save(persona);
-//		model.addAttribute("persona", persona);
-		return "redirect:/listado";
-	}
-
-	@RequestMapping(value = "/edit/{id}", method = { RequestMethod.POST, RequestMethod.PUT })
-	public String edit(@PathVariable(value = "id") Integer id, @RequestParam(value = "nombre") String nombre,
-			@RequestParam(value = "apellido") String apellido, @RequestParam(value = "dni") long dni,
-			@RequestParam(value = "activo", required = false) Boolean activo, Model model) throws ParseException {
-
-//		Persona persona = usuarioRepository.findById(id);
-//		persona.setApellido(apellido);
-//		persona.setNombre(nombre);
-//		persona.setDni(dni);
-////		persona.setActivo(activo != null);
-//		persona.setActivo(activo == null ? false : true);
+		
+		persona.setDni(dni);
+		persona.setNombre(nombre);
+		persona.setApellido(apellido);
+		
+		personaRepository.save(persona);
 
 		return "redirect:/listado";
 	}
