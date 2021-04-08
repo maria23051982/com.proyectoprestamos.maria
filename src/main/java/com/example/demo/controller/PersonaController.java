@@ -3,6 +3,8 @@ package com.example.demo.controller;
 
 import java.util.Optional;
 
+import javax.validation.constraints.Email;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -25,10 +27,12 @@ public class PersonaController {
 	@Autowired
 	PersonaRepository personaRepository;
 
-	@RequestMapping("")
+	@RequestMapping("/")
 	public String alta(Model model) {
-		model.addAttribute("persona", new Persona());
+		model.addAttribute("personas", new Persona());
+		Persona persona = new Persona();
 		return "personas/alta";
+		
 	}
 
 	@RequestMapping("/listado")
@@ -47,14 +51,19 @@ public class PersonaController {
 
 		model.addAttribute("personas", persona.get());
 		return "editar";
+		
 	}
 
 	@PostMapping("/save")
 	public String save(@RequestParam(value = "dni", required = true) Long dni,
+			@RequestParam(value = "dtype", required = true) String dtype,
 			@RequestParam(value = "nombre", required = true) String nombre,
-			@RequestParam(value = "apellido", required = true) String apellido) {
+			@RequestParam(value = "apellido", required = true) String apellido,
+			@RequestParam(value = "email", required = true) Email email,
+			@RequestParam(value = "password", required = true) String password)
+			{
 		
-	
+		
 		Persona persona = personaRepository.findByDni(dni).get();
 		if (persona == null)
 			return "redirect:/error";
@@ -63,6 +72,10 @@ public class PersonaController {
 		persona.setDni(dni);
 		persona.setNombre(nombre);
 		persona.setApellido(apellido);
+		persona.setDtype(dtype);
+		persona.setEmail(email);
+		persona.setPassword(password);
+		System.out.println(persona);
 		
 		personaRepository.save(persona);
 

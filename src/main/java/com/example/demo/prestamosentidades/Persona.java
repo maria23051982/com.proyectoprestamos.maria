@@ -10,6 +10,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+import javax.validation.constraints.Email;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -32,6 +33,7 @@ public class Persona implements Serializable {
 	private String nombre;
 	private String apellido;
 	private Long dni;
+
 	@OneToMany
 	private List<Prestamo> prestamos = new ArrayList<>();
 
@@ -39,5 +41,24 @@ public class Persona implements Serializable {
 		prestamos.add(prestamo);
 
 	}
+
+	public void setDtype(String dtype) {
+		
+		
+	}
+
+	public void setEmail(Email email) {
+		
+		
+	}
+
+	public void setPassword(String password) {
+	
+		
+	}
+
+	
+
+
 
 }
