@@ -2,7 +2,9 @@ package com.example.demo.controller;
 
 import java.text.ParseException;
 import java.util.Optional;
+
 import javax.validation.constraints.Email;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -12,6 +14,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+
 import com.example.demo.prestamosentidades.Persona;
 import com.example.demo.repositorios.PersonaRepository;
 
@@ -19,8 +22,6 @@ import com.example.demo.repositorios.PersonaRepository;
 @RequestMapping("/personas")
 public class PersonaController {
 
-	
-	
 	@Autowired
 	PersonaRepository personaRepository;
 	private Email email;
@@ -30,13 +31,13 @@ public class PersonaController {
 		Persona persona = new Persona();
 		model.addAttribute("personas", persona);
 
-		return "alta";
+		return "personas/alta";
 	}
 
 	@RequestMapping("/listado")
 	public String list(Model model) {
 		model.addAttribute("personas", personaRepository.findAll());
-		return "listado";
+		return "personas/listado";
 	}
 
 	@RequestMapping(value = "/personas", method = { RequestMethod.POST, RequestMethod.PUT })
@@ -53,28 +54,28 @@ public class PersonaController {
 
 	@PostMapping("/save")
 	public String save(@RequestParam(value = "dni", required = true) Long dni,
-			@RequestParam(value = "dtype", required = true) String dtype,
 			@RequestParam(value = "nombre", required = true) String nombre,
 			@RequestParam(value = "apellido", required = true) String apellido,
-			@RequestParam(value = "email", required = true) Email email,
-			@RequestParam(value = "password", required = true) String password)
-			{
+			@RequestParam(value = "email", required = true) String email) {
 
+		Persona persona = new Persona();
+		persona.setDni(dni);
+		persona.setApellido(apellido);
+		persona.setNombre(nombre);
+		persona.setEmail(email);
+		personaRepository.save(persona);
 
-      this.setEmail(email);
-		return "redirect:/listado";
+		return "redirect:/personas/listado";
 	}
 
 	@RequestMapping(value = "/edit/{id}", method = { RequestMethod.POST, RequestMethod.PUT })
-	public String edit(@PathVariable(value = "id") Integer id,
-			@RequestParam(value = "dni", required = true) Long dni,
+	public String edit(@PathVariable(value = "id") Integer id, @RequestParam(value = "dni", required = true) Long dni,
 			@RequestParam(value = "dtype", required = true) String dtype,
 			@RequestParam(value = "nombre", required = true) String nombre,
 			@RequestParam(value = "apellido", required = true) String apellido,
 			@RequestParam(value = "email", required = true) Email email,
 			@RequestParam(value = "password", required = true) String password,
 			@RequestParam(value = "activo", required = false) Boolean activo, Model model) throws ParseException {
-
 
 		return "redirect:/listado";
 	}

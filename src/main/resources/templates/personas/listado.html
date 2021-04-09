@@ -26,8 +26,8 @@
 			      <th scope="col">Nombre</th>
 			      <th scope="col">Apellido</th>
 			      <th scope="col">Email</th>
-			      <th scope="col">Password</th>
-			      <th scope="col">Dtype</th>
+  			      <th scope="col">Prestamos</th>
+			      
 			    </tr>
 			  </thead>
 			  <tbody>
@@ -36,7 +36,7 @@
 				    <td th:text="${personas.dni}" />
 	  			    <td th:text="${personas.nombre}" />
 				    <td th:text="${personas.apellido}" />
-				    <td th:text="${personas.prestamo}" />
+				    <td th:text="${personas.prestamos}" />
 				    <td th:field="${personas}"><form th:action="@{|/personas/borrar/${personas.id}|}" method="post"><button type="submit" class="btn btn-danger">Borrar</button></form></td>
 				    <td th:field="${personas}"><form th:action="@{|/personas/editar/${personas.id}|}" method="post"><button type="submit" class="btn btn-danger">Editar</button></form></td>
 				</tr>

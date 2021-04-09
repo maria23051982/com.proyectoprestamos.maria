@@ -2,7 +2,6 @@ package com.example.demo.prestamosentidades;
 
 import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
-import javax.validation.constraints.Email;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -20,8 +19,5 @@ public class Usuario extends Persona {
 	private static final long serialVersionUID = 1L;
 
 	private String password;
-
-	@Email
-	private String email;
 
 }
